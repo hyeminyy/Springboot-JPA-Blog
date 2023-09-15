@@ -21,7 +21,7 @@ public class HttpControllerTest {
 	}
 	//http://localhost:8080/http/post (insert)
 	@PostMapping("/http/post")
-	public String postTest(@RequestBody Member m) { //MessageConverter
+	public String postTest(@RequestBody Member m) { //MessageConverter!
 		return "post 요청 : "+m.getId() + "," + m.getUsername()+ "," + m.getPassword() + ","+m.getEmail();
 	}
 	//http://localhost:8080/http/put (update)
