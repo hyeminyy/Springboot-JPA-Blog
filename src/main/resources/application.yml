@@ -1,6 +1,14 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://127.0.0.1:3306/blogProject?serverTimezone=Asia/Seoul
     username: root
-    password: dlsvlslxM12!
+    password: dlsvlsxlM12!
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    open-in-view: true
+    properties:
+      hibernate.hbm2ddl.auto: update
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect # MySQL 8.x 버전을 사용하는 경우
+    show-sql: true
+
