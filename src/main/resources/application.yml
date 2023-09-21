@@ -13,11 +13,13 @@ spring:
     username: root
     password: dlsvlslxM12!
     driverClassName: com.mysql.cj.jdbc.Driver
-
+    
   jpa:
     open-in-view: true
     properties:
       hibernate.hbm2ddl.auto: update
-      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect # MySQL 8.x 버전을 사용하는 경우
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
 
+spring.mvc.view.prefix: /WEB-INF/views/
+spring.mvc.view.suffix: .jsp
