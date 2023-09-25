@@ -11,7 +11,6 @@
     <input type="text" class="form-control" placeholder="Enter username" id="username">
   </div>
   
-  
    <div class="form-group">
    	 <label for="password">Password</label>
    	 
