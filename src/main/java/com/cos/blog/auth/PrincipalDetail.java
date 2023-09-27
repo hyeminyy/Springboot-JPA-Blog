@@ -11,7 +11,10 @@ import com.cos.blog.model.User;
 //스프링 시큐리티의 고유한 세션 저장소에 저장을 해줌.
 public class PrincipalDetail implements UserDetails{
 	private User user; //컴포지션 
-
+	
+	public PrincipalDetail(User user) {
+		this.user =user;
+	}
 
 	@Override
 	public String getPassword() {
@@ -44,18 +47,12 @@ public class PrincipalDetail implements UserDetails{
 	public boolean isEnabled() {
 		return true;
 	}
-	//계정이 어떤 권한을 가졌는지 
+	//계정이 갖고 있는 권한 목록을 리턴한다. ( 권한이 여러개 있을 수 있어서 루프르르 돌아야 하는데 여기는 하나여서..) 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
 		Collection<GrantedAuthority> collectors = new ArrayList<>();
-		collectors.add(new GrantedAuthority() {
-			
-			@Override
-			public String getAuthority() {
-				return "ROLE_"+user.getRole(); //ROLE_USER 
-			}
-		});
+		collectors.add(()->{return "ROLE_"+user.getRole();});
 		
 		return collectors;
 	}
