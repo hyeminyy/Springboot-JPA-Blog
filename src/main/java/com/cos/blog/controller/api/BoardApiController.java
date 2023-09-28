@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,18 +26,29 @@ import com.cos.blog.service.UserService;
 public class BoardApiController {
 	
 	@Autowired
-	private BoardService boardservice;
+	private BoardService boardService;
 
 	@PostMapping("/api/board")
 	public ResponseDto<Integer> save(@RequestBody Board board, @AuthenticationPrincipal PrincipalDetail principal) { //username, password, email
-		boardservice.글쓰기(board, principal.getUser());
+		boardService.글쓰기(board, principal.getUser());
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
+	
 	@DeleteMapping("/api/board/{id}")
 	public ResponseDto<Integer> deleteById(@PathVariable int id){
-		boardservice.글삭제하기(id);
+		boardService.글삭제하기(id);
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+	}
+	
+	@PutMapping("/api/board/{id}")
+	public ResponseDto<Integer> update(@PathVariable int id, @RequestBody Board board){
+//		System.out.println("boardApiController : update : id :" + id);
+//		System.out.println("boardApiController : update : board :" + board.getTitle());
+//		System.out.println("boardApiController : update : board :" + board.getContent());
+		boardService.글수정하기(id, board);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
+		
 	}
 
 	

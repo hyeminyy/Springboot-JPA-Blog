@@ -4,22 +4,22 @@
 
 <div class="container">
  	<form>
+ 	<input type = "hidden" id="id" value="${board.id}"/>
 	  <div class="form-group">
-	    <input type="text" class="form-control" placeholder="Enter Title" id="title">
+	    <input value="${board.title}" type="text" class="form-control" placeholder="Enter Title" id="title">
 	  </div>
 	
 	  
 	<div class="form-group">
-	  <textarea class="form-control summernote" rows="5" id="content"></textarea>
+	  <textarea class="form-control summernote" rows="5" id="content">${board.content}</textarea>
 	</div>
 	  
 	
 	</form>
-	  <button id="btn-save" class="btn btn-primary">글쓰기 완료</button>
+	  <button id="btn-update" class="btn btn-primary">수정 완료</button>
 </div>
 	<script>
 	      $('.summernote').summernote({
-	        placeholder: '글을 작성해주세요 !',
 	        tabsize: 2,
 	        height: 300
 	      });
