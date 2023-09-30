@@ -91,7 +91,7 @@ public class User {
 	public Timestamp getCreateDate() {
 		return createDate;
 	}
-
+	
 	public void setCreateDate(Timestamp createDate) {
 		this.createDate = createDate;
 	}
