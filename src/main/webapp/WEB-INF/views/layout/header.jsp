@@ -22,7 +22,7 @@
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 <!--메인페이지-->
-  <a class="navbar-brand" href="/">HOME</a> 
+  <a class="navbar-brand" href="/">HYEMIN'BLOG</a> 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
