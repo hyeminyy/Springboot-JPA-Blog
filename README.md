@@ -6,8 +6,8 @@
 
 
 ## ⚒️SKILL⚒️
-- Java
 - Spring Boot
+- java
 - MySQL
 - Html, CSS, JS
 
