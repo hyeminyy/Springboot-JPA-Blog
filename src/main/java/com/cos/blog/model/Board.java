@@ -13,8 +13,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 import com.cos.blog.model.User;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
@@ -46,8 +49,10 @@ private int count; //조회수
 @JoinColumn(name="userId")
 private User user; //db는 오브젝트를 저장할 수 없다. FK, 자바는 오브젝트를 저장할 수 있다.
 
-@OneToMany(mappedBy = "board", fetch = FetchType.LAZY) //mappedBy 연관관계의 주인이 아니다. (난 FK가 아니다.)DB에 칼럼을 만들지
-private List<Reply> reply;
+@OneToMany(mappedBy = "board", fetch = FetchType.EAGER) //mappedBy 연관관계의 주인이 아니다. (난 FK가 아니다.)DB에 칼럼을 만들지
+@JsonIgnoreProperties({"board"})
+@OrderBy("id desc")
+private List<Reply> replys;
 
 @CreationTimestamp
 private Timestamp createDate;

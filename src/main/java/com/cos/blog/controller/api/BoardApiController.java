@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cos.blog.auth.PrincipalDetail;
 import com.cos.blog.dto.ResponseDto;
 import com.cos.blog.model.Board;
+import com.cos.blog.model.Reply;
 import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
 import com.cos.blog.service.BoardService;
@@ -50,6 +51,12 @@ public class BoardApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 		
 	}
+	@PostMapping("/api/board/{boardId}/reply")
+	public ResponseDto<Integer> replySave(@PathVariable int boardId, @RequestBody Reply reply, @AuthenticationPrincipal PrincipalDetail principal) { //username, password, email
 
+		
+		boardService.댓글쓰기(principal.getUser(),boardId, reply );
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+	}
 	
 }
