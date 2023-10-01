@@ -75,32 +75,43 @@ let index = {
 		});
 	
   },
-  replySave: function(){
-	  		
-			let data = {
-					
-					content: $("#reply-content").val()
-			};
-			
-			let boardId = $("#boardId").val();
-			
-
-		$.ajax({
-
-		type : "POST",
-		url: `/api/board/${boardId}/reply`,
-		data:JSON.stringify(data), 
-		contentType: "application/json; charset=utf-8", 
-		dataType : "json" 
-	}).done(function(resp){
-		alert("댓글 작성이 완료되었습니다.");
-		location.href=`/board/${boardId}`;
-	}).fail(function(error){
-					alert(JSON.stringify(error));
-		});
-
+	replySave: function() {
+	    let data = {
+	        content: $("#reply-content").val()    // textarea 내용
+	    };
 	
-  },
+	    let boardId = $("#boardId").val();   // .val() 안붙이면 int 타입 
+	 
+	    $.ajax({
+	        //댓글 쓰기 수행 요청
+	        type: "POST",
+	        url: `/api/board/${boardId}/reply`,  // 백틱 씀
+	        data: JSON.stringify(data),
+	        contentType: "application/json; charset=utf-8",
+	        dataType: "json"
+	    }).done(function(resp) {
+	        alert("댓글 작성이 완료되었습니다.");
+	        location.href = `/board/${boardId}`;  // 해당 게시글 이동
+	    }).fail(function(error) {
+	        alert(JSON.stringify(error));
+	    });
+	},
+	
+		replyDelete: function(boardId, replyId) {
+	 
+	    $.ajax({
+	        //댓글 쓰기 수행 요청
+	        type: "DELETE",
+	        url: `/api/board/${boardId}/reply/${replyId}`,  // 백틱 씀
+	        contentType: "application/json; charset=utf-8",
+	        dataType: "json"
+	    }).done(function(resp) {
+	        alert("댓글 삭제 성공");
+	        location.href = `/board/${boardId}`;  // 해당 게시글 이동
+	    }).fail(function(error) {
+	        alert(JSON.stringify(error));
+	    });
+	},
 }
 
 index.init();

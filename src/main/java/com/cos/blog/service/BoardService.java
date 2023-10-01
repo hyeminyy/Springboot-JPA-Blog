@@ -71,14 +71,21 @@ public class BoardService {
 	}
 	
 	@Transactional
-	public void 댓글쓰기(User user,int boardId, Reply requestReply) {
-		Board board = boardRepository.findById(boardId).orElseThrow(()->{
-			return new IllegalArgumentException("댓글쓰기 실패 : 게시글 id를 찾을 수 없습니다. ");
-});
-		
-		requestReply.setUser(user);
-		requestReply.setBoard(board);
-		
-		replyRepository.save(requestReply);
+	public void 댓글쓰기(User user, int boardId, Reply requestReply) {  // 요청받은 reply
+
+	    Board board = boardRepository.findById(boardId)
+	            .orElseThrow(()->{
+	                return new IllegalArgumentException("댓글 작성 실패 : 게시글 id를 찾을 수 없습니다.");
+	            });
+
+	    requestReply.setUser(user);
+	    requestReply.setBoard(board);   // boardId는 findById를 통해서 넣는다.
+
+	    replyRepository.save(requestReply);   // user,board오브젝트를 넣은것
+	}
+	
+	@Transactional
+	public void 댓글삭제(int replyId) {
+		replyRepository.deleteById(replyId);
 	}
 }
