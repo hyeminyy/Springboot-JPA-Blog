@@ -1,7 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="../layout/header.jsp" %>
-
+	<style>
+		.btn-primary{
+			background-color: #D2E5A8;
+	   		 color: #ffffff;
+	   		 border: none;
+	   		 border-radius: 5px;
+		}
+		
+		.btn-primary:hover {
+	    background-color: #C0D396;
+		}
+	
+		.btn-save:active {
+	    background-color: #003366;
+		}
+	
+	</style>
     
 <div class="container">
 		<button class="btn btn-outline-secondary" onclick="history.back()">돌아가기</button>

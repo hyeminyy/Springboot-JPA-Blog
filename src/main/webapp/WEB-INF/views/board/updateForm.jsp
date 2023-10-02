@@ -6,6 +6,21 @@
         background-color: #eaf2d7;
         
     }
+    .btn-primary {
+        background-color: #D2E5A8;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 15px;
+    }
+
+    .btn-primary:hover {
+        background-color: #C0D396;
+    }
 </style>
 <div class="container">
  	<form>
