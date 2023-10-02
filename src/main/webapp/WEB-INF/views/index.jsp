@@ -3,35 +3,43 @@
 <%@ include file="layout/header.jsp" %>
 
 <style>
+    body {
+        background-color: #eaf2d7;
+        
+    }
     .container {
         margin-top: 50px;
     }
 
     .card-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 가로 3개의 카드 정렬 */
-        grid-gap: 20px; /* 카드 간격 */
-        margin-top: 20px; /* 부모 컨테이너 상단 간격 */
+        
+        grid-gap: 20px; 
+        margin-top: 20px; 
     }
 
-    .card {
-        border: none;
-        background: #f8f9fa;
-        width: 14rem;
-        height: 20rem;
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-        margin-bottom: 20px;
-        cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능함을 나타냄 */
-    }
+  .card {
+    border: none;
+    background: #f8f9fa;
+
+    height: 5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    cursor: pointer;
+}
 
     .card-body {
         padding: 20px;
     }
 
     .card-title {
-        color: #007bff;
+        color:#363636;
         font-size: 24px;
+        
         margin-bottom: 10px;
+    }
+    .card-text{
+   	 font-size: 12px;
     }
 
     .btn-primary {
@@ -52,6 +60,12 @@
         border-color: #dee2e6;
         color: #6c757d;
     }
+    
+    .page-item:not(.disabled) .page-link {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    color: #C0D396; 
+}
 </style>
 
 <script>
@@ -67,7 +81,7 @@
             <div class="card" onclick="redirectToBoard(${board.id})">
                 <div class="card-body">
                     <h4 class="card-title">${board.title}</h4>
-                    <!-- 버튼을 클릭하는 대신 card-body를 클릭하면 redirectToBoard 함수가 호출됩니다. -->
+                    
                 </div>
             </div>
         </c:forEach>

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@include file="../layout/header.jsp" %>
 
+    
 <div class="container">
 		<button class="btn btn-outline-secondary" onclick="history.back()">돌아가기</button>
 		

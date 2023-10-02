@@ -4,11 +4,12 @@
 
 <style>
     body {
-        background-color: #ffffff;
+        background-color: #eaf2d7;
     }
 
     .container {
         margin-top: 50px;
+        margin-bottom: 50px;
         max-width: 400px;
         background-color: #ffffff;
         border-radius: 10px;
@@ -36,7 +37,7 @@
     }
 
     .btn-login {
-        background-color: #007bff;
+        background-color: #D2E5A8;
         color: #ffffff;
         border: none;
         border-radius: 5px;
@@ -47,7 +48,7 @@
     }
 
     .btn-login:hover {
-        background-color: #0056b3;
+        background-color: #C0D396;
     }
 
     .btn-login:active {

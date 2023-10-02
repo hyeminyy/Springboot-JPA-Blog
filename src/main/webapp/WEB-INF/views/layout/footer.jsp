@@ -4,23 +4,22 @@
 <html lang="en">
 <head>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+	     body {
+	    max-width: 1200px;
+	    margin: 0 auto;
+		}
 
         .jumbotron {
             background-color: #f8f9fa;
             color: #495057;
-            padding: 30px 0;
+            padding: 20px 0;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 0px;
         }
 
         .jumbotron p {
-            font-size: 16px;
-            margin-bottom: 8px;
+            font-size: 13px;
+            margin-bottom: 6px;
         }
 
         .social-icons {
@@ -43,11 +42,10 @@
 <body>
     <div class="jumbotron">
         <p>Create by. Kim Hye Min 👩🏻</p>
-        <p>📞 010-6604-6230</p>
         <p>📩 www_wowwh@naver.com</p>
         <div class="social-icons">
-           <a href="https://github.com/hyeminyy" target="_blank"><img src="image/github.png"></a>
-           <a href="https://steady-developer-hyemin.tistory.com/" target="_blank"><img src="image/blog.png"></a>
+           <a href="https://github.com/hyeminyy" target="_blank"><img src="../image/github.png"></a>
+           <a href="https://steady-developer-hyemin.tistory.com/" target="_blank"><img src="../image/blog.png"></a>
         </div>
     </div>
 </body>
