@@ -4,11 +4,15 @@
 
 <div align="center">
 <h3>👩🏻COMMENT👋🏻</h3> 
+  <p>
+    - Spring Boot 중점의 프로젝트로 블로그 제작<br/>
+    - 사용자들의 자유로운 글 작성<br/>
+    - 사용자 인증을 통한 로그인 및 회원가입 그리고 회원 수정, 다양한 글 작성 기능(글, 이미지 첨부 등), 사용자 간 댓글 가능
+    
+  </p>
 </div>
 
-<div align="center">
-
-</div>
+<br/>
 
 
 <div align="center">
